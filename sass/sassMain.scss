@@ -1,0 +1,141 @@
+//import globalStyle file
+@use "./globalStyle" as *;
+
+/*Start NavBar*/
+.navbar{
+    .navbar-nav .nav-link{
+        &.active, 
+        &:focus,
+        &:hover{
+            color: $green-color !important;
+        }
+    }
+    .search{
+        border-left: 1px solid $green-color;
+        svg{
+            color: $green-color;
+        }
+    }
+    .navbar-toggler{
+        border-color: white;
+        font-size: 25px;
+        &:focus{
+            box-shadow: none;
+        }
+        &[aria-expanded="true"]{
+            border-color: $green-color;
+            color: $green-color !important;
+        }
+    }
+}
+/*End NavBar*/
+/*Start Landing*/
+.landing{
+    min-height: calc(100vh - 72px);
+}
+/*End Landing*/
+/*Start Services*/
+.services{
+    .icon-holder{
+        height: 200px;
+        svg{
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+        }
+        .number{
+            font-size: 12rem;
+            color: $white-color;      
+        }
+        .icon{
+            color: $green-color;
+        }
+    }
+}
+/*End Services*/
+/*Start Portfolio*/
+.portfolio{
+    ul{
+       li{
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        &.active{
+            background-color:$red-color;
+            color: $yellow-color;
+        }
+        &:not(.active):hover{
+            color: $red-color;
+        }
+       }
+    }
+    .box{
+        padding: 5px;
+        &::before{
+            content: attr(data-work);
+            background-color: $white-color;
+            position: absolute;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $dark-color;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transform: translateX(calc(-100% - 5px));
+            -webkit-transform: translateX(calc(-100% - 5px));
+            -moz-transform: translateX(calc(-100% - 5px));
+            -ms-transform: translateX(calc(-100% - 5px));
+            -o-transform: translateX(calc(-100% - 5px));
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+        &:hover::before{
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+        }
+    }
+}
+/*End Portfolio*/
+/*Start About Us*/
+.aboutus{
+    .description{
+        max-width: 32rem;
+    }
+}
+/*End About US*/
+/*Start Subscribe*/
+.subscribe{
+    input[type="text"]{
+        border-bottom: 1px solid white !important;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: white;
+        }
+    }
+    .btn:hover{
+            background-color: $dark-color;
+        }
+}
+/*End Subscribe*/
+/*Start Footer*/
+.footer{
+    .contact{
+        ul svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+/*End Footer*/

@@ -1,0 +1,74 @@
+//This fill Containe Global Syntax
+
+/*Start Colors*/
+$dark-color: #19283f;
+$green-color: #33d1cc;
+$red-color: #ff3150;
+$yellow-color: #ffc400;
+$white-color: #eff7fa;
+$colors: "green" $green-color,"dark" $dark-color,"white" $white-color,"yellow" $yellow-color,"red" $red-color;
+$brands-theme: "facebook" #1877f2,"twitter" #1da1f2,"linkedin" #0077b5,"youtube"  #ff0000;
+@each $nclr, $clr in $colors{
+    .color-#{$nclr}{
+        color: $clr !important;
+    }
+} 
+@each $nclr, $clr in $colors{
+    .backg-#{$nclr}{
+        background-color: $clr;
+    }
+}
+@each $brand, $clr in $brands-theme{
+    .#{$brand}{
+        background-color: $clr;
+    }
+}
+//End Colors
+//Start Scroll
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: $dark-color;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $red-color;
+}
+//End Scroll
+//Start Body
+body{
+    font-family: "Roboto", sans-serif;
+}
+//End Body
+//Start Btn
+.main-btn{
+    background-color: $red-color;
+    color: $yellow-color;
+    border-color: $red-color;
+    padding: 0.5rem 1rem;
+    &:hover{
+        background-color: transparent;
+        border-color: $yellow-color;
+        color: $yellow-color;
+    }
+}
+.main-title{
+    &::after{
+        content: '';
+        width: 120px;
+        height: 2px;
+        background-color: $green-color;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+}
+//End Main-btn
